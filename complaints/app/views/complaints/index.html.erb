@@ -1,0 +1,39 @@
+<h1>Complaint Processing Center</h1>
+<form method='post' action="<%= url_for :controller => 'complaints', :action => 'process' %>">
+<%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+<%= will_paginate @complaints %>
+<table class='complaints grid'>
+  <tr>
+    <!-- <th>&nbsp;</th> -->
+    <th>Complaint</th>
+    <th>Where</th>
+    <th>When</th>
+    <!-- <th>Approved</th> -->
+  </tr>
+
+<% for complaint in @complaints %>
+<tr class="<%= cycle('even', 'odd') %>">
+<!-- <td><%= check_box_tag 'selected_complaints', complaint.id %></td> -->
+<td><%=h complaint.complaint %></td>
+<td><%=h complaint.nice_location -%>
+<% if complaint.geocoded? -%>
+&nbsp;<%= image_tag 'tick.png', :alt => 'Geocoded', :title => 'Geocoded', :height => 16, :width => 16 -%>
+<% else -%>
+&nbsp;&nbsp;<%= image_tag 'error.png', :alt => 'Not Geocoded', :title => 'Not Geocoded', :height => 16, :width => 16 -%>
+<% end -%>
+</td>
+<td><%= time_ago_in_words complaint.created_at %> ago</td>
+<!-- <td><%=h complaint.approved %></td> -->
+<!-- <td><%= link_to 'Show', complaint %></td> -->
+<td class='itemOptions'><%= link_to 'Edit', edit_complaint_path(complaint), :class => 'action edit' %></td>
+<td class='itemOptions'><%= link_to 'Destroy', complaint, :confirm => 'Are you sure?', :method => :delete, :class => 'action destroy' %></td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate @complaints %>
+</form>
+
+<br />
+
+<p class='itemOptions'><%= link_to 'Complain', new_complaint_path, :class => 'action new' %>
+</p>

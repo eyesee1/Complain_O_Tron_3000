@@ -1,0 +1,38 @@
+<h1>Listing inquiries</h1>
+
+<%= will_paginate @inquiries %>
+
+<table class='grid inquiryList'>
+  <tr>
+    <th>From/Email</th>
+    <th>Where/When</th>
+    <th>Nature of Inquiry</th>
+    <th>Message</th>
+  </tr>
+<% for inquiry in @inquiries %>
+  <tr>
+    <td>
+        <%= mail_to inquiry.email, inquiry.from, :subject => inquiry_email_subject(inquiry),
+            :body => "\n\nYou said:\n\n" + inquiry.message %>
+        <%=h inquiry.phone %></td>
+    <td><%=h inquiry.nice_location -%>
+<% if inquiry.geocoded? -%>
+&nbsp;<%= image_tag 'tick.png', :alt => 'Geocoded', :title => 'Geocoded', :height => 16, :width => 16 -%>
+<% else -%>
+&nbsp;&nbsp;<%= image_tag 'error.png', :alt => 'Not Geocoded', :title => 'Not Geocoded', :height => 16, :width => 16 -%>
+<% end -%>
+<br />
+<%= time_ago_in_words inquiry.created_at %>&nbsp;ago
+    </td>
+    <td><%=h inquiry.nature %></td>
+    <td><%=h inquiry.message %></td>
+    <td class='itemOptions'><%= link_to 'Show', inquiry %>
+    <%= link_to 'Edit', edit_inquiry_path(inquiry) %>
+    <%= link_to 'Destroy', inquiry, :confirm => 'Are you sure?', :method => :delete, :class => 'action destroy' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New inquiry', new_inquiry_path %>

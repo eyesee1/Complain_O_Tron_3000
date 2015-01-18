@@ -1,0 +1,22 @@
+<div class='faqs'>
+<h1>FAQ</h1>
+<p>Everything you wanted to know about the Complain-O-Tron&nbsp;3000™ but were afraid to ask.</p>
+<p class='itemOptions'><%= link_to 'New FAQ', new_faq_path, :class => 'action new' %></p>
+<%= will_paginate @faqs %>
+<div class='faqList'>
+<% for faq in @faqs %>
+<div class='faqItem'>
+<h3><%= markdown faq.question %></h3>
+<div class='answer'><%= markdown faq.answer %></div>
+<ul class='itemOptions'>
+<li><%= link_to '&#x2191;', { :id => faq.id, :action => :move_higher } %></li>
+<li><%= link_to '&#x2193;', { :id => faq.id, :action => :move_lower  } %></li>
+<li><%= link_to 'Edit', edit_faq_path(faq) %></li>
+<li><%= link_to 'Destroy', faq, :confirm => 'Are you sure?', :method => :delete, :class => 'action destroy' %></li>
+</ul>
+</div>
+<% end %>
+</div>
+<%= will_paginate @faqs %>
+<p class='itemOptions'><%= link_to 'New FAQ', new_faq_path, :class => 'action new' %></p>
+</div>

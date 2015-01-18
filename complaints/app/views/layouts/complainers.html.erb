@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= @page_title or 'Complaints: ' + controller.action_name %></title>
+<%= javascript_include_tag :all, :cache => true %>
+<%= stylesheet_link_tag 'complainers' %>
+</head>
+<body class='<%= controller.controller_name %> <%= controller.action_name %>'>
+<p style="color: green"><%= flash[:notice] %></p>
+<div id='mainContent'>
+<%= yield  %>
+</div>
+<div id='footer'>
+<ul class='textnav'>
+<li><%= link_to 'Complain', {:controller=>'complaints', :'action'=>'new'} -%></li>
+<li><%= link_to 'About', {:controller=>'pages', :action=>'show', :id=>'about'} -%></li>
+<li><%= link_to 'FAQ', {:controller=>'faqs', :action=>'list', :id => 'all'} -%></li>
+<li class='last'><%= link_to 'Contact', {:controller=>'inquiries', :action=>'new', :id=> nil } -%></li>
+</ul>
+</div>
+<p id='copyright'>Copyleft &copy;2008 Complaints Choirs of planet Earth. All Rights Reversed.</p>
+</body>
+</html>

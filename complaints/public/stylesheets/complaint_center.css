@@ -1,0 +1,382 @@
+/* @override http://127.0.0.1:3000/stylesheets/complaint_center.css */
+
+/* @group Yahoo's Reset code */
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.1
+*/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;}
+
+/* @end */
+
+/* @group from rails scaffold */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+
+
+/* @end */
+
+html, body {
+	background-color: #fae18f;
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font: 86.4% Helvetica, sans-serif;
+	margin: 2em;
+}
+
+a:link {
+	color: teal;
+}
+
+a:visited {
+	color: purple;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+#header, #mainBody, #footer {
+	background-color: white;
+}
+
+#header {
+	-webkit-border-top-left-radius:1em;
+	-webkit-border-top-right-radius:1em;
+	background-color: #f8be00;
+	padding: 1em 1em 1px;
+	border-top: 1px solid #e5b000;
+	border-left: 1px solid #e5b000;
+	border-right: 1px solid #cb9c00;
+	position: relative;
+}
+
+#mainBody {
+	padding: 1em;
+	border-right: 1px solid #d6b33f;
+	position: relative;
+}
+
+#footer {
+	-webkit-border-bottom-left-radius:1em;
+	-webkit-border-bottom-right-radius:1em;
+	background-color: #f8be00;
+	padding: 1em;
+	font-size: 70%;
+	text-align: center;
+	border-top: 1px solid #deaa00;
+	border-bottom: 1px solid #b78c00;
+	border-right: 1px solid #b78c00;
+}
+
+.branding a {
+	text-decoration: none;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-bottom: .5em;
+}
+
+.geo_true {
+	background: url(../images/tick.png) no-repeat right center;
+	padding-right: 22px;
+}
+
+h3 {
+	font-weight: bold;
+}
+
+div.faqList {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-top: 1em;
+}
+
+div.faqItem {
+	padding: 1em;
+	border: 1px solid #edca81;
+	margin-bottom: -1px;
+}
+
+.faqItem p {
+	margin-bottom: 1em;
+}
+
+.branding {
+	font-weight: bold;
+	font-style: italic;
+	font-size: .9em;
+}
+
+#logout {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+div.pagination {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+form p {
+	margin-bottom: .5em;
+	margin-top: .5em;
+}
+
+label {
+	font-weight: bold;
+	display: block;
+}
+
+.radios label {
+	display: inline;
+}
+
+/* @group nav */
+
+ul.nav {
+	padding-left: 1em;
+	padding-right: 1em;
+	margin: 1em -1em -1px;
+}
+
+.nav li {
+	float: left;
+	margin-right: .5em;
+}
+
+.nav li a {
+	background-color: #f8f873;
+	padding: .5em;
+	text-decoration: none;
+	display: block;
+	-webkit-border-top-left-radius: .5em;
+	-webkit-border-top-right-radius: .5em;
+	border-top: 1px solid #fff0b5;
+	border-left: 1px solid #fff0b5;
+	border-right: 1px solid #fff0b5;
+	border-bottom: 1px solid #f4e191;
+}
+
+.nav li a:link, .nav li a:visited {
+	color: black;
+	font-weight: bold;
+}
+
+ul.nav li.active a:link, ul.nav li.active a:visited {
+	background-color: white;
+	color: gray;
+	margin-bottom: -1px;
+	border-bottom: 1px solid white !important;
+}
+
+ul.nav li.active {
+	border-bottom: 1px solid white;
+}
+
+
+
+/* @end */
+
+/* @group grid table */
+
+table.grid {
+	border-collapse: collapse;
+	border: 1px solid silver;
+}
+
+.grid tr {
+	
+}
+
+.grid th, td {
+	border: 1px solid #dadada;
+	padding: .25em .5em;
+}
+
+.grid th {
+	background-color: #fff1a6;
+	border-color: #dadada;
+	font-weight: bold;
+	color: #494949;
+}
+
+.odd {
+	background-color: #fff9e5;
+}
+
+
+
+/* @end */
+
+/* @group clearfix */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+/* End hide from IE-mac */
+
+/* @end */
+
+ul.itemOptions {
+	margin-bottom: 1em;
+	margin-top: .3em;
+}
+
+.itemOptions li {
+	display: inline;
+	list-style-type: none;
+}
+
+.itemOptions a:link, .itemOptions a:visited {
+	color: black;
+}
+
+.itemOptions a:hover {
+	
+}
+
+.itemOptions a:active {
+	border-style: inset;
+}
+
+.itemOptions a.action {
+	padding-left: 24px;
+}
+
+.itemOptions a.destroy {
+	color: red;
+	background: url(../images/delete.png) no-repeat 5px center;
+}
+
+.itemOptions a {
+	text-decoration: none;
+	display: inline-block;
+	background-color: #efefef !important;
+	border: 1px outset #e6e6e6;
+	font-weight: bold;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	padding: .4em 1em;
+}
+
+.itemOptions a.new {
+	background: url(../images/add.png) no-repeat 5px center;
+}
+
+#markdownCheat {
+	position: absolute;
+	top: 5em;
+	right: 12px;
+	width: 19em;
+	display: block;
+	font-size: .85em;
+	background-color: #e9e9e9;
+	padding: 1em;
+}

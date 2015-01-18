@@ -1,0 +1,7 @@
+<h1>Complaint Received.</h1>
+<p>Your complaint:</p>
+<p class='complaint'><strong><em><%=h @complaint.complaint %></em></strong></p>
+<p>… has been sent for processing by the Complaints Choir nearest to <%=h @complaint.nice_location %>.</p>
+<p>Feels good to let that out, doesn&#8217;t it?</p>
+<p>Visit <%= link_to 'Complaints Choirs of the World', "http://www.complaintschoir.org/" -%> for complaints choir news, information, and performance videos.</p> 
+<p>Have another complaint? We&#8217;ll take all you&#8217;ve got: <%= link_to 'Complain&nbsp;again.', {:action=>'new'} -%></p>

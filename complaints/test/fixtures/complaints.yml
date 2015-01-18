@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  complaint: MyText
+  created: 2008-04-05 17:04:26
+  spam: false
+  approved: false
+
+two:
+  complaint: MyText
+  created: 2008-04-05 17:04:26
+  spam: false
+  approved: false

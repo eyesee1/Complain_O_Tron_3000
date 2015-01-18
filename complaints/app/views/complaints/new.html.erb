@@ -1,0 +1,16 @@
+<h1>Complain Here.</h1>
+<%= error_messages_for :complaint %>
+<% form_for(@complaint) do |f| %>
+<p><label for='complaint_complaint'>My complaint is:</label><br />
+<%= f.text_area :complaint, :value => nil, :size => '30x4', :tabindex => 1, :accesskey => 'c' %></p>
+<p><label for='complaint_location_entry'> I am complaining from:</label><br />
+<%= f.text_field :location_entry, :value => nil, :size => 20, :tabindex => 2, :accesskey => 'w' %><br />
+<span class='helptext'><em>Example:</em> Chicago, IL, US <em>or enter postal code:</em> 60601</span></p>
+<p class='complainButton'><%= image_submit_tag 'SendComplaint.jpg', :tabindex => 3, :accesskey => 's' -%></p>
+<p>Your complaint will be delivered to the nearest <%= link_to 'Complaints Choir', "http://www.complaintschoir.org/" -%> for processing.</p>
+<% end %>
+<script type='text/javascript'>
+<!--
+Event.observe(window, "load", function() {$('complaint_complaint').focus();}, false);
+// -->
+</script>

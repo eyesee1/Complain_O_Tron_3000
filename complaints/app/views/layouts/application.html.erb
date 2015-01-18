@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title><%= @page_title or 'Complaints: ' + controller.action_name %></title>
+<%= javascript_include_tag :all, :cache => true %>
+<%= stylesheet_link_tag 'complaint_center' %>
+</head>
+<body>
+<div id='header'>
+<p class='branding'><a href='/'>Complain-O-Tron 3000™</a></p>
+<p id='logout'><%= link_to "Log Out", {:controller => 'account', :action => 'logout'} %></p>
+<ul class='topnav nav clearfix'>
+<li class="<%= 'active' if controller.controller_name == 'complaints'%>"><%= link_to "Complaints", :controller => 'complaints', :action => 'index' %></li>
+<li class="<%= 'active' if controller.controller_name == 'faqs'%>"><%= link_to "FAQs", :controller => 'faqs', :action => 'index' %></li>
+<li class="<%= 'active' if controller.controller_name == 'inquiries'%>"><%= link_to "Inquiries", :controller => 'inquiries', :action => 'index' %></li>
+<li class="<%= 'active' if controller.controller_name == 'pages'%>"><%= link_to "Pages", :controller => 'pages', :action => 'index' %></li>
+</ul>
+</div>
+<div id='mainBody'>
+<p style="color: green"><%= flash[:notice] %></p>
+<%= yield  %>
+</div>
+<div id='footer'>Complain-O-Tron 3000</div>
+</body>
+</html>

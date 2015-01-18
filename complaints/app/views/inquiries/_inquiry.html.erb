@@ -1,0 +1,50 @@
+<h1>Contact the Complain-O-Tron 3000™</h1>
+<p>I am a busy robot. Please read the <%= link_to "FAQ", :controller => 'faqs', :action => 'list', :id => 'all' %> before inquiring. </p>
+<p>I will convert your inquiries to binary code and analyze them, but I cannot promise to find the CPU cycles necessary to reply to them all.</p>
+
+<%= error_messages_for :inquiry %>
+
+<% form_for(@inquiry) do |f| %>
+
+<fieldset><legend>What is the nature of your inquiry?</legend>
+<ul class='radios'>
+<% for n in natures_of_requests %>
+<li><%= f.radio_button :nature, n[1] %><%= f.label 'nature_' + n[1].underscore , n[0] %></li>
+<% end %>
+</ul>
+</fieldset>
+
+
+  <p>
+    <%= f.label :from, "From (your name)" %>
+    <%= f.text_field :from %>
+    <span class='helptext'>Ex: <em>Jimmy Jams</em></span>
+  </p>
+
+  <p>
+    <%= f.label :email, "Email address" %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :phone, 'Phone (optional)' %>
+    <%= f.text_field :phone %>
+  </p>
+
+<p><%= f.label :location_entry, 'From where do you inquire?' %>
+    <%= f.text_field :location_entry %>
+    <span class='helptext'>Ex: <em>Chicago, IL, US</em> or postal code.</span>
+</p>
+
+  <p>
+     <%= f.label :message %>
+    <%= f.text_area :message, :size => '35x6' %>
+  </p>
+
+
+  <p>
+    <%= f.submit "Send" %>
+  </p>
+
+<% end %>
+

@@ -1,0 +1,44 @@
+<h1>Editing inquiry</h1>
+
+<%= render :partial => 'inquiry' %>
+
+<%= error_messages_for :inquiry %>
+
+<% form_for(@inquiry) do |f| %>
+  <p>
+    <b>From</b><br />
+    <%= f.text_field :from %>
+  </p>
+
+  <p>
+    <b>Email</b><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <b>Phone</b><br />
+    <%= f.text_field :phone %>
+  </p>
+
+  <p>
+    <b>What</b><br />
+    <%= f.text_field :what %>
+  </p>
+
+  <p>
+    <b>Message</b><br />
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <b>Ip</b><br />
+    <%= f.text_field :ip %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @inquiry %> |
+<%= link_to 'Back', inquiries_path %>

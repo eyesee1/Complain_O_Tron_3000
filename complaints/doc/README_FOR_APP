@@ -1,0 +1,8 @@
+Complaint-O-Tron 3000!
+
+For the "complaining from" box's auto-complete feature, we're using location data from: http://earth-info.nga.mil/gns/html/cntry_files.html - its file format description is here: http://earth-info.nga.mil/gns/html/gis_countryfiles.htm
+
+This is then related to countries using the FIPS 10-4, available here: http://earth-info.nga.mil/gns/html/gazetteers2.htm
+
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.

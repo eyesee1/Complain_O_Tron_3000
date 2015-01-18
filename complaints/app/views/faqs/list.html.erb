@@ -1,0 +1,8 @@
+<div class='faqs'>
+<h1>FAQ</h1>
+<p><%= link_to 'Ask', {:controller=>'inquiries', :action=>'new', :id=> nil } -%> frequently, and the Complain-O-Tron 3000™ shall answer.</p>
+<% for faq in @faqs %>
+<h3><%= markdown faq.question %></h3>
+<div class='answer'><%= markdown faq.answer %></div>
+<% end %>
+</div>

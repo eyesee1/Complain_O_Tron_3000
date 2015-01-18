@@ -1,0 +1,7 @@
+<h1><%=h @page.title %></h1>
+<div class='pageContent'>
+<%= markdown(@page.content) %>
+</div>
+<% if logged_in? -%>
+<p class='editable'><%=h current_user.login -%> may <%= link_to 'Edit this Page', edit_page_path(@page) -%></p>
+<% end %>

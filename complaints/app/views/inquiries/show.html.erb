@@ -1,0 +1,33 @@
+<p>
+  <b>From:</b>
+  <%=h @inquiry.from %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @inquiry.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @inquiry.phone %>
+</p>
+
+<p>
+  <b>What:</b>
+  <%=h @inquiry.what %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%=h @inquiry.message %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%=h @inquiry.ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %> |
+<%= link_to 'Back', inquiries_path %>

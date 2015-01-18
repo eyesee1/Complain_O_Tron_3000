@@ -1,0 +1,257 @@
+/* @override 
+	http://127.0.0.1:3000/stylesheets/complainers.css
+	http://complainhere.info/stylesheets/complainers.css?1210222230
+*/
+
+/* @group Yahoo's Reset code */
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.1
+*/
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;}
+
+/* @end */
+
+html, body {
+	background-color: #ff7600;
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font: 86.4% Helvetica, sans-serif;
+	text-align: center;
+	
+}
+
+#mainContent {
+	border-width: 3px;
+	border-style: solid;
+	margin: 1em auto;
+	background-color: #ffca5b;
+	-webkit-border-radius: 1.5em;
+	-moz-border-radius: 1.5em;
+	border-radius: 1.5em;
+	text-align: left;
+	width: 80%;
+	padding: 2em 3em;
+}
+
+body.complaints #mainContent {
+	width: 43%;
+}
+
+
+
+#mainContent p, #mainContent ul {
+}
+
+a:link {
+	color: #903b00;
+}
+
+a:visited {
+	color: #960000;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	padding: 0;
+	letter-spacing: -1pt;
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 0.4em;
+}
+
+p,li,dd {
+	padding-bottom: .6em;
+	line-height: 126%;
+}
+
+input[type='text'], textarea {
+	border: 1px solid #ff7600;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font: 1.1em "Courier New", Courier, mono;
+}
+
+ul.textnav {
+	
+}
+
+.textnav li {
+	list-style-type: none;
+	display: inline;
+}
+
+.textnav li a {
+
+}
+
+.textnav li:after {
+	content: " | ";
+}
+
+
+.textnav li.last:after {
+	content:  "";
+}
+
+#mainContent p.complaint strong {
+	font-size: 147%;
+}
+
+body.faqs h1, body.pages h1 {
+	text-align: left;
+}
+
+#complaint_submit {
+	font-weight: bold;
+	color: black;
+	font-size: 2em;
+	padding: .5em .6em;
+	-moz-border-radius: .5em;
+}
+
+h3 {
+	text-indent: 0;
+	text-align: left;
+	margin-bottom: 0;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+
+h3 + p {
+}
+
+#copyright {
+	font-size: .9em;
+	margin-top: 1em;
+}
+
+/* @group form errors */
+
+div.errorExplanation {
+	border: 2px solid red;
+	background-color: white;
+	font-size: 1.2em;
+	margin-bottom: 1em;
+}
+
+.errorExplanation h2 {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	padding: .25em;
+}
+
+.errorExplanation p, .errorExplanation ul {
+	margin: .5em;
+}
+
+.errorExplanation li {
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 1em;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+
+
+/* @end */
+
+/* @group Forms */
+
+label {
+	display: block;
+}
+
+body.complaints.new label {
+	display: inline;
+}
+
+fieldset {
+	display: block;
+	margin-bottom: 1em;
+}
+
+legend {
+	font-weight: bold;
+	padding-bottom: .6em;
+}
+
+ul.radios {
+	padding-left: 1.5em;
+	list-style-position: outside;
+}
+
+.radios li {
+	list-style-type: none;
+	list-style-position: outside;
+	padding-bottom: .5em;
+}
+
+.radios li input {
+}
+
+.radios li label {
+	padding-left: .5em;
+	display: inline;
+}
+
+textarea {
+}
+
+.helptext {
+	color: black;
+	font-size: .9em;
+}
+
+.helptext em {
+	color: #8e7032;
+}
+
+p.complainButton {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+
+
+/* @end */
